@@ -6,8 +6,8 @@ state("Romancing SaGa 2 RotS-Win64", "101")
 
 state("Romancing SaGa 2 RotS-Win64", "102")
 {
-	bool load : "Romancing SaGa 2 RotS-Win64.exe", 0x5A21240, 0x400, 0x60, 0xF0, 0x5A8, 0x100;
-	byte load2 : "Romancing SaGa 2 RotS-Win64.exe", 0x5ABE610, 0x118, 0x1A8, 0x380, 0xB8, 0x288;
+	bool load : "Romancing SaGa 2 RotS-Win64.exe", 0x5ABE610, 0x180, 0x88, 0x10, 0x5A8, 0x100;
+	byte load2 : "Romancing SaGa 2 RotS-Win64.exe", 0x5A65BB8, 0xA8, 0x30, 0xA8, 0x78, 0x288;
 }
 
 startup
