@@ -6,8 +6,19 @@ state("Romancing SaGa 2 RotS-Win64", "101")
 
 state("Romancing SaGa 2 RotS-Win64", "102")
 {
-	bool load : "Romancing SaGa 2 RotS-Win64.exe", 0x5CF2D70, 0x70, 0x80, 0xF0, 0x5A8, 0x100;
-	byte load2 : "Romancing SaGa 2 RotS-Win64.exe", 0x5CF2D70, 0x6B0, 0x28, 0x2B0, 0x748, 0, 0x288;
+	bool load : "Romancing SaGa 2 RotS-Win64.exe", 0x5A21240, 0x400, 0x60, 0xF0, 0x5A8, 0x100;
+	byte load2 : "Romancing SaGa 2 RotS-Win64.exe", 0x5ABE610, 0x118, 0x1A8, 0x380, 0xB8, 0x288;
+}
+
+startup
+{
+	vars.crash = false;
+}
+
+update
+{
+	if (current.load)
+		vars.crash = false;
 }
 
 
@@ -25,9 +36,10 @@ init
 exit
 {
 	timer.IsGameTimePaused = true;
+	vars.crash = true;
 }
 
 isLoading
 {
-	return current.load || current.load2 == 1;
+	return current.load || current.load2 == 1 || vars.crash;
 }
