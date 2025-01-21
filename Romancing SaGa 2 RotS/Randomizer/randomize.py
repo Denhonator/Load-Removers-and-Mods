@@ -36,11 +36,12 @@ def scale_values(data, start, interval, factor, count):
         data[offset:offset+4] = value.to_bytes(4,'little')
     return data
 
-def find_replace(data, start, find, replace):
+def find_replace_meta_range(data, start, findL, findR, replace, verPos, verVal):
     data = bytearray(data)
     for i in range(start, len(data)):
-        if data[i:i+4] == find:
-            data[i:i+4] = replace
+        val = int.from_bytes(data[i:i+4],'little')
+        if val >= findL and val <= findR and int.from_bytes(data[i+verPos:i+verPos+4],'little') == verVal:
+            data[i:i+4] = replace.to_bytes(4,'little')
     return data
 
 if __name__ == "__main__":
@@ -313,8 +314,6 @@ if __name__ == "__main__":
         file.write(scale_values(data, 0x1296, 315, 10, 5))
 
     data = read_file("Game_Original/Content/Main/UI/Object/Map/WorldMap/Data/DT_WorldMapIconDataTable.uasset")
-    f = 332
-    r = 333
     with open("Game/Content/Main/UI/Object/Map/WorldMap/Data/DT_WorldMapIconDataTable.uasset", 'wb') as file:
-        file.write(find_replace(data, 0x2B350, f.to_bytes(4,'little'), r.to_bytes(4,'little')))
+        file.write(find_replace_meta_range(data, 0x18100, 983, 1065, 1059, -25, 842))
     
