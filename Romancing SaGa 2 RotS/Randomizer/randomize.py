@@ -55,23 +55,14 @@ if __name__ == "__main__":
         dropName = meta[int.from_bytes(data[index+49:index+53], 'little')]
         dropsCount = int.from_bytes(data[index+90:index+94], 'little')
         #print(int.from_bytes(data[index+119:index+123], 'little'))
-        drops = []
-        drop = {"MWeight": int.from_bytes(data[index+168:index+172], 'little'),
-                "MItemCount": int.from_bytes(data[index+197:index+201], 'little'),
-                "MItemID": int.from_bytes(data[index+226:index+230], 'little'),
-                "MMoney": int.from_bytes(data[index+259:index+263], 'little', signed=True),
-                "BankMoney": int.from_bytes(data[index+288:index+292], 'little', signed=True)}
-        drops.append(drop)
+        if not "DLC" in meta[key]:
+            table[index+168] ={  "value": data[index+168:index+292],
+                                "name": dropName}
         index+=292
         for i in range(dropsCount-1):
-            drop = {"MWeight": int.from_bytes(data[index+33:index+37], 'little'),
-                "MItemCount": int.from_bytes(data[index+62:index+66], 'little'),
-                "MItemID": int.from_bytes(data[index+91:index+95], 'little'),
-                "MMoney": int.from_bytes(data[index+124:index+128], 'little', signed=True),
-                "BankMoney": int.from_bytes(data[index+153:index+157], 'little', signed=True)}
-            drops.append(drop)
+            table[index+33] ={  "value": data[index+33:index+157],
+                                "name": dropName}
             index+=157
-        table[key] = {"MDropName": dropName, "Offset": offset, "MDropItemInfos": drops}
     #print(table)
 
     randoKeys = []
@@ -79,18 +70,15 @@ if __name__ == "__main__":
     index = 0
     for key in table:
         #print("{}, Offset: {}".format(key, table[key]["Offset"]))
-        if not "Enemy" in meta[key]:
-            randoKeys.append(key)
-            randoIndex.append(index)
-            index+=1
+        randoKeys.append(key)
+        randoIndex.append(index)
+        index+=1
     random.shuffle(randoIndex)
     index = 0
     data = bytearray(data)
     for i in randoIndex:
-        offset = table[randoKeys[index]]["Offset"]
-        value = randoKeys[i].to_bytes(4,'little')
-        data[offset+16] = value[0]
-        data[offset+17] = value[1]
+        offset = randoKeys[index]
+        data[offset:offset+124] = table[randoKeys[i]]["value"]
         index += 1
     with open("Game/Content/Main/Item/DataTable/DT_DropItem.uasset", 'wb') as file:
         file.write(data)
@@ -266,7 +254,7 @@ if __name__ == "__main__":
         offset = table[key]["offset"]
         data[offset:offset+1694] = table[rkey]["value"][:]
         index += 1
-        print("{} = {}".format(key, rkey))
+        #print("{} = {}".format(key, rkey))
 
     with open("Game/Content/Main/Item/DataTable/Cellest/DT_CellestItemShield.uasset", 'wb') as file:
         file.write(data)
@@ -298,7 +286,7 @@ if __name__ == "__main__":
         offset = table[key]["offset"]
         data[offset:offset+517] = table[rkey]["value"][:]
         index += 1
-        print("{} = {}".format(key, rkey))
+        #print("{} = {}".format(key, rkey))
 
     with open("Game/Content/Main/Item/DataTable/Cellest/DT_CellestItemWeapon.uasset", 'wb') as file:
         file.write(data)
@@ -328,5 +316,5 @@ if __name__ == "__main__":
     f = 332
     r = 333
     with open("Game/Content/Main/UI/Object/Map/WorldMap/Data/DT_WorldMapIconDataTable.uasset", 'wb') as file:
-        file.write(find_replace(data, 0xE9B0, f.to_bytes(4,'little'), r.to_bytes(4,'little')))
+        file.write(find_replace(data, 0x2B350, f.to_bytes(4,'little'), r.to_bytes(4,'little')))
     
