@@ -36,6 +36,13 @@ def scale_values(data, start, interval, factor, count):
         data[offset:offset+4] = value.to_bytes(4,'little')
     return data
 
+def find_replace(data, start, find, replace):
+    data = bytearray(data)
+    for i in range(start, len(data)):
+        if data[i:i+4] == find:
+            data[i:i+4] = replace
+    return data
+
 if __name__ == "__main__":
     # DropItem
     data = read_file("Game_Original/Content/Main/Item/DataTable/DT_DropItem.uasset")
@@ -312,4 +319,14 @@ if __name__ == "__main__":
     data = read_file("Game_Original/Content/Main/Exp/DataTable/DT_ExpMasterLevel.uasset")
     with open("Game/Content/Main/Exp/DataTable/DT_ExpMasterLevel.uasset", 'wb') as file:
         file.write(scale_values(data, 0x2EF, 74, 0.1, 90))
+
+    data = read_file("Game_Original/Content/Main/GamePlayData/Data/DT_EnemyForceLevelTable.uasset")
+    with open("Game/Content/Main/GamePlayData/Data/DT_EnemyForceLevelTable.uasset", 'wb') as file:
+        file.write(scale_values(data, 0x1296, 315, 10, 5))
+
+    data = read_file("Game_Original/Content/Main/UI/Object/Map/WorldMap/Data/DT_WorldMapIconDataTable.uasset")
+    f = 332
+    r = 333
+    with open("Game/Content/Main/UI/Object/Map/WorldMap/Data/DT_WorldMapIconDataTable.uasset", 'wb') as file:
+        file.write(find_replace(data, 0xE9B0, f.to_bytes(4,'little'), r.to_bytes(4,'little')))
     
