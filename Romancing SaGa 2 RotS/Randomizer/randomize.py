@@ -82,6 +82,7 @@ if __name__ == "__main__":
 
     # Techs
     skiplist = []
+    followupTable = {}
     techdata = read_file("Game_Original/Content/Main/Battle/MainSystem/Data/Arts/DT_BattleSkillArtsTable.uasset")
     techmeta = get_meta(techdata, 998, 0x40)
     spelldata = read_file("Game_Original/Content/Main/Battle/MainSystem/Data/Arts/DT_BattleSpellArtsTable.uasset")
@@ -100,6 +101,10 @@ if __name__ == "__main__":
         if source==4137:
             if "-" in meta[skillid] or meta[skillid][-1]=="2" or "Balm" in meta[skillid] or "Normal" in meta[skillid]:
                 skiplist.append(meta[skillid])
+                if "-Damage" in meta[skillid] or "-Lv" in meta[skillid]:
+                    base = meta[skillid][:meta[skillid].find("-")]
+                    if not base[-1]=="2":
+                        followupTable[meta[skillid]] = base
                 #print("Skipping "+meta[skillid])
             elif meta[skillid] in techmeta:
                 table[key] = {"data": data[index+123:index+127], "offset": offset}
@@ -141,8 +146,6 @@ if __name__ == "__main__":
         data[offset+123:offset+127] = value[:]
         index += 1
 
-    print(techTable)
-    
     with open("Game/Content/Main/Battle/MainSystem/Data/Arts/DT_BattleArtsResourceTable.uasset", 'wb') as file:
         file.write(data)
 
@@ -157,7 +160,7 @@ if __name__ == "__main__":
             key = int.from_bytes(data[index:index+4], 'little')
             key = meta[key] if key < len(meta) else ""
             artstype = int.from_bytes(data[index+8:index+12],'little')
-            if key in techTable and artstype < len(meta) and meta[artstype]=="MArtsType":
+            if (key in techTable or key in followupTable) and artstype < len(meta) and meta[artstype]=="MArtsType":
                 table[key] = {"MArtsType": data[index+41:index+45], "offset": index}
                 for i in range(2200, 2900):
                     fathom = int.from_bytes(data[index+i:index+i+4], 'little')
@@ -166,7 +169,8 @@ if __name__ == "__main__":
                         table[key]["MDamageRefLevel"] = data[index+i+335:index+i+339]
                         table[key]["offsetFathom"] = index+i
                         break
-                data[index:index+4] = meta.index(techTable[key]).to_bytes(4,'little')
+                if key in techTable:
+                    data[index:index+4] = meta.index(techTable[key]).to_bytes(4,'little')
                 index += 3000
             elif key in skiplist:
                 index += 3000
@@ -176,9 +180,10 @@ if __name__ == "__main__":
             #print("{} = {}".format(key, techTable[key]))
             offset = table[key]["offset"]
             offsetFathom = table[key]["offsetFathom"]
-            data[offset+41:offset+45] = table[techTable[key]]["MArtsType"][:]
+            other = techTable[key if key in techTable else followupTable[key]]
+            data[offset+41:offset+45] = table[other]["MArtsType"][:]
             #data[offsetFathom+25:offsetFathom+29] = table[techTable[key]]["MFathomArtsId"][:]
-            data[offsetFathom+335:offsetFathom+339] = table[techTable[key]]["MDamageRefLevel"][:]
+            data[offsetFathom+335:offsetFathom+339] = table[other]["MDamageRefLevel"][:]
 
         if j==0:
             with open("Game/Content/Main/Battle/MainSystem/Data/Arts/DT_BattleSkillArtsTable.uasset", 'wb') as file:
