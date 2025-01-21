@@ -310,9 +310,11 @@ if __name__ == "__main__":
         file.write(scale_values(data, 0x2EF, 74, 0.1, 90))
 
     data = read_file("Game_Original/Content/Main/GamePlayData/Data/DT_EnemyForceLevelTable.uasset")
+    data = scale_values(data, 0x125C, 315, 5, 5)
     with open("Game/Content/Main/GamePlayData/Data/DT_EnemyForceLevelTable.uasset", 'wb') as file:
         file.write(scale_values(data, 0x1296, 315, 10, 5))
 
+    # Unlock locations
     data = read_file("Game_Original/Content/Main/UI/Object/Map/WorldMap/Data/DT_WorldMapIconDataTable.uasset")
     with open("Game/Content/Main/UI/Object/Map/WorldMap/Data/DT_WorldMapIconDataTable.uasset", 'wb') as file:
         file.write(find_replace_meta_range(data, 0x18100, 983, 1065, 1059, -25, 842))
