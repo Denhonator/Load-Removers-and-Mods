@@ -197,9 +197,11 @@ if __name__ == "__main__":
     while index+1000 < len(data):
         if data[index:index+6] == comp:
             key = int.from_bytes(data[index-116:index-112],'little')
-            table[meta[key]] = {"offset": index-116, "key": data[index-116:index-112],
-                                "ItemCategory": data[index-83:index-79],
-                                "PartsID": data[index-50:index-46]}
+            i = index+150
+            while not (data[i] == 0x83 and data[i-49] == 0x2E):
+                i += 1
+            
+            table[meta[key]] = {"offset": i, "value": data[i:i+1611]}
             randoKeys.append(meta[key])
             index += 1500
         index += 1
@@ -210,9 +212,7 @@ if __name__ == "__main__":
     for key in table:
         rkey = randoKeys[index]
         offset = table[key]["offset"]
-        data[offset:offset+4] = table[rkey]["key"][:]
-        data[offset+33:offset+37] = table[rkey]["ItemCategory"][:]
-        data[offset+66:offset+70] = table[rkey]["PartsID"][:]
+        data[offset:offset+1611] = table[rkey]["value"][:]
         index += 1
         print("{} = {}".format(key, rkey))
 
