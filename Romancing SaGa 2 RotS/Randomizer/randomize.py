@@ -28,6 +28,14 @@ def get_meta(data, amount, offset):
         index += 2+strLen
     return meta
 
+def scale_values(data, start, interval, factor, count):
+    data = bytearray(data)
+    for i in range(count):
+        offset = start+i*interval
+        value = int(int.from_bytes(data[offset:offset+4],'little',signed=True)*factor)
+        data[offset:offset+4] = value.to_bytes(4,'little')
+    return data
+
 if __name__ == "__main__":
     # DropItem
     data = read_file("Game_Original/Content/Main/Item/DataTable/DT_DropItem.uasset")
@@ -287,3 +295,21 @@ if __name__ == "__main__":
 
     with open("Game/Content/Main/Item/DataTable/Cellest/DT_CellestItemWeapon.uasset", 'wb') as file:
         file.write(data)
+
+    # Scaling
+    data = read_file("Game_Original/Content/Main/Exp/DataTable/DT_ExpArtsLevel.uasset")
+    with open("Game/Content/Main/Exp/DataTable/DT_ExpArtsLevel.uasset", 'wb') as file:
+        file.write(scale_values(data, 0x2E7, 74, 0.1, 100))
+        
+    data = read_file("Game_Original/Content/Main/Exp/DataTable/DT_ExpBp.uasset")
+    with open("Game/Content/Main/Exp/DataTable/DT_ExpBp.uasset", 'wb') as file:
+        file.write(scale_values(data, 0x324, 132, 0.1, 50))
+        
+    data = read_file("Game_Original/Content/Main/Exp/DataTable/DT_ExpHp.uasset")
+    with open("Game/Content/Main/Exp/DataTable/DT_ExpHp.uasset", 'wb') as file:
+        file.write(scale_values(data, 0x324, 132, 0.1, 200))
+        
+    data = read_file("Game_Original/Content/Main/Exp/DataTable/DT_ExpMasterLevel.uasset")
+    with open("Game/Content/Main/Exp/DataTable/DT_ExpMasterLevel.uasset", 'wb') as file:
+        file.write(scale_values(data, 0x2EF, 74, 0.1, 90))
+    
