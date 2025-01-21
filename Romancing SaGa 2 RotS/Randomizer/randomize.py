@@ -22,6 +22,8 @@ def get_meta(data, amount, offset):
         strLen = data[index+1]
         if enc=='utf-16le':
             strLen *= 2
+            if data[index+2]==0:
+                index+=1
         meta.append(data[index+2:index+2+strLen].decode(enc))
         index += 2+strLen
     return meta
@@ -185,3 +187,42 @@ if __name__ == "__main__":
             with open("Game/Content/Main/Battle/MainSystem/Data/Arts/DT_BattleSpellArtsTable.uasset", 'wb') as file:
                 file.write(data)
 
+    # Armor
+    data = read_file("Game_Original/Content/Main/Item/DataTable/Cellest/DT_CellestItemArmor.uasset")
+    meta = get_meta(data, 257, 0x40)
+    index = 0
+    table = {}
+    randoKeys = []
+    comp = "proper".encode()
+    while index+1000 < len(data):
+        if data[index:index+6] == comp:
+            key = int.from_bytes(data[index-116:index-112],'little')
+            table[meta[key]] = {"offset": index-116, "key": data[index-116:index-112],
+                                "ItemCategory": data[index-83:index-79],
+                                "PartsID": data[index-50:index-46]}
+            randoKeys.append(meta[key])
+            index += 1500
+        index += 1
+
+    random.shuffle(randoKeys)
+    index = 0
+    data = bytearray(data)
+    for key in table:
+        rkey = randoKeys[index]
+        offset = table[key]["offset"]
+        data[offset:offset+4] = table[rkey]["key"][:]
+        data[offset+33:offset+37] = table[rkey]["ItemCategory"][:]
+        data[offset+66:offset+70] = table[rkey]["PartsID"][:]
+        index += 1
+        print("{} = {}".format(key, rkey))
+
+    with open("Game/Content/Main/Item/DataTable/Cellest/DT_CellestItemArmor.uasset", 'wb') as file:
+        file.write(data)
+    
+    # Shields
+    data = read_file("Game_Original/Content/Main/Item/DataTable/Cellest/DT_CellestItemShield.uasset")
+    meta = get_meta(data, 204, 0x40)
+
+    # Weapons
+    data = read_file("Game_Original/Content/Main/Item/DataTable/Cellest/DT_CellestItemWeapon.uasset")
+    meta = get_meta(data, 455, 0x40)
