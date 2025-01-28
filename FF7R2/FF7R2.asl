@@ -5,7 +5,7 @@ state("ff7rebirth_")
 	bool loadskip : "ff7rebirth_.exe", 0x08F795C0, 0xA68, 0;
 	bool load3 : "ff7rebirth_.exe", 0x091C5018, 0x68;
 	int black : "ff7rebirth_.exe", 0x091C5018, 0x10;
-	int black2 : "ff7rebirth_.exe", 0x090F7AD0, 0x68, 0xA88;
+	int black2 : "ff7rebirth_.exe", 0x091E1F98, 0x12A8, 0x48, 8;
 	float fade : "ff7rebirth_.exe", 0x09217FC8, 0x30, 0x1F8, 0x2BC;
 }
 
