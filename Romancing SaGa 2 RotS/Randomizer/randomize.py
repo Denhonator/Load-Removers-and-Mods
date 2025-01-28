@@ -45,6 +45,7 @@ def find_replace_meta_range(data, start, findL, findR, replace, verPos, verVal):
     return data
 
 if __name__ == "__main__":
+    random.seed(0)
     # DropItem
     data = read_file("Game_Original/Content/Main/Item/DataTable/DT_DropItem.uasset")
     meta = get_meta(data, 2125, 0x40)
@@ -198,96 +199,96 @@ if __name__ == "__main__":
 
     # Armor
     data = read_file("Game_Original/Content/Main/Item/DataTable/Cellest/DT_CellestItemArmor.uasset")
-    meta = get_meta(data, 257, 0x40)
-    index = 0
-    table = {}
-    randoKeys = []
-    comp = "proper".encode()
-    while index+1000 < len(data):
-        if data[index:index+6] == comp:
-            key = int.from_bytes(data[index-116:index-112],'little')
-            i = index+150
-            while not (data[i] == 0x83 and data[i-49] == 0x2E):
-                i += 1
-            
-            table[meta[key]] = {"offset": i, "value": data[i:i+1611]}
-            randoKeys.append(meta[key])
-            index += 1500
-        index += 1
-
-    random.shuffle(randoKeys)
-    index = 0
-    data = bytearray(data)
-    for key in table:
-        rkey = randoKeys[index]
-        offset = table[key]["offset"]
-        data[offset:offset+1611] = table[rkey]["value"][:]
-        index += 1
-        #print("{} = {}".format(key, rkey))
+##    meta = get_meta(data, 257, 0x40)
+##    index = 0
+##    table = {}
+##    randoKeys = []
+##    comp = "proper".encode()
+##    while index+1000 < len(data):
+##        if data[index:index+6] == comp:
+##            key = int.from_bytes(data[index-116:index-112],'little')
+##            i = index+150
+##            while not (data[i] == 0x83 and data[i-49] == 0x2E):
+##                i += 1
+##            
+##            table[meta[key]] = {"offset": i, "value": data[i:i+1611]}
+##            randoKeys.append(meta[key])
+##            index += 1500
+##        index += 1
+##
+##    random.shuffle(randoKeys)
+##    index = 0
+##    data = bytearray(data)
+##    for key in table:
+##        rkey = randoKeys[index]
+##        offset = table[key]["offset"]
+##        data[offset:offset+1611] = table[rkey]["value"][:]
+##        index += 1
+##        #print("{} = {}".format(key, rkey))
 
     with open("Game/Content/Main/Item/DataTable/Cellest/DT_CellestItemArmor.uasset", 'wb') as file:
         file.write(data)
     
     # Shields
     data = read_file("Game_Original/Content/Main/Item/DataTable/Cellest/DT_CellestItemShield.uasset")
-    meta = get_meta(data, 204, 0x40)
-
-    index = 0
-    table = {}
-    randoKeys = []
-    while index+1600 < len(data):
-        if data[index:index+6] == comp:
-            key = int.from_bytes(data[index-83:index-79],'little')
-            i = index+120
-            while not (data[i] == 0xC3 and data[i+29] == 0x53):
-                i += 1
-            
-            table[meta[key]] = {"offset": i, "value": data[i:i+1694]}
-            randoKeys.append(meta[key])
-            index = i+32
-        index += 1
-
-    random.shuffle(randoKeys)
-    index = 0
-    data = bytearray(data)
-    for key in table:
-        rkey = randoKeys[index]
-        offset = table[key]["offset"]
-        data[offset:offset+1694] = table[rkey]["value"][:]
-        index += 1
-        #print("{} = {}".format(key, rkey))
+##    meta = get_meta(data, 204, 0x40)
+##
+##    index = 0
+##    table = {}
+##    randoKeys = []
+##    while index+1600 < len(data):
+##        if data[index:index+6] == comp:
+##            key = int.from_bytes(data[index-83:index-79],'little')
+##            i = index+120
+##            while not (data[i] == 0xC3 and data[i+29] == 0x53):
+##                i += 1
+##            
+##            table[meta[key]] = {"offset": i, "value": data[i:i+1694]}
+##            randoKeys.append(meta[key])
+##            index = i+32
+##        index += 1
+##
+##    random.shuffle(randoKeys)
+##    index = 0
+##    data = bytearray(data)
+##    for key in table:
+##        rkey = randoKeys[index]
+##        offset = table[key]["offset"]
+##        data[offset:offset+1694] = table[rkey]["value"][:]
+##        index += 1
+##        #print("{} = {}".format(key, rkey))
 
     with open("Game/Content/Main/Item/DataTable/Cellest/DT_CellestItemShield.uasset", 'wb') as file:
         file.write(data)
 
     # Weapons
     data = read_file("Game_Original/Content/Main/Item/DataTable/Cellest/DT_CellestItemWeapon.uasset")
-    meta = get_meta(data, 455, 0x40)
-
-    index = 0x6AF5
-    table = {}
-    randoKeys = []
-    while index+800 < len(data):
-        if data[index:index+6] == comp:
-            key = int.from_bytes(data[index-116:index-112],'little')
-            i = index+150
-            while not (data[i] == 0x34 and data[i+1] == 1):
-                i += 1
-            
-            table[meta[key]] = {"offset": i, "value": data[i:i+517]}
-            randoKeys.append(meta[key])
-            index = i+32
-        index += 1
-
-    random.shuffle(randoKeys)
-    index = 0
-    data = bytearray(data)
-    for key in table:
-        rkey = randoKeys[index]
-        offset = table[key]["offset"]
-        data[offset:offset+517] = table[rkey]["value"][:]
-        index += 1
-        #print("{} = {}".format(key, rkey))
+##    meta = get_meta(data, 455, 0x40)
+##
+##    index = 0x6AF5
+##    table = {}
+##    randoKeys = []
+##    while index+800 < len(data):
+##        if data[index:index+6] == comp:
+##            key = int.from_bytes(data[index-116:index-112],'little')
+##            i = index+150
+##            while not (data[i] == 0x34 and data[i+1] == 1):
+##                i += 1
+##            
+##            table[meta[key]] = {"offset": i, "value": data[i:i+517]}
+##            randoKeys.append(meta[key])
+##            index = i+32
+##        index += 1
+##
+##    random.shuffle(randoKeys)
+##    index = 0
+##    data = bytearray(data)
+##    for key in table:
+##        rkey = randoKeys[index]
+##        offset = table[key]["offset"]
+##        data[offset:offset+517] = table[rkey]["value"][:]
+##        index += 1
+##        #print("{} = {}".format(key, rkey))
 
     with open("Game/Content/Main/Item/DataTable/Cellest/DT_CellestItemWeapon.uasset", 'wb') as file:
         file.write(data)
