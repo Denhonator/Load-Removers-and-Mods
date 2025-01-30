@@ -44,15 +44,15 @@ exit
 
 isLoading
 {
-	// if(old.black==13 && current.black!=13)
-		// vars.zackload = true;
+	if(old.black==13 && current.black!=13)
+		vars.zackload = true;
 	//print("Black: " + current.black.ToString() + " Black2: " + current.black2.ToString() + " Black3: " + current.black3.ToString());
 	if(current.black==7 && !current.menu)
-		vars.blackcounter += 1;
+		vars.blackcounter += vars.zackload ? 60 : 1;
 	else if((current.black==1 || current.black==13) && !current.menu){
 		vars.blackcounter = 0;
 		vars.zackload = false;
 	}
-	return (current.black > 2 && ((current.black!=7||vars.blackcounter>=60)&&!vars.zackload) && !(current.menu||current.canskip))
+	return (current.black > 2 && ((current.black!=7||vars.blackcounter>=60)) && !(current.menu||current.canskip))
 		|| current.load2 || current.load3;
 }
