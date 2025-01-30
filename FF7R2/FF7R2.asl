@@ -44,8 +44,8 @@ exit
 
 isLoading
 {
-	if(old.black==13 && current.black!=13)
-		vars.zackload = true;
+	// if(old.black==13 && current.black!=13)
+		// vars.zackload = true;
 	//print("Black: " + current.black.ToString() + " Black2: " + current.black2.ToString() + " Black3: " + current.black3.ToString());
 	if(current.black==7 && !current.menu)
 		vars.blackcounter += 1;
