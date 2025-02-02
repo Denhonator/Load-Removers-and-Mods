@@ -1,20 +1,20 @@
 state("ff7rebirth_", "EGS")
 {
-	//bool load : "ff7rebirth_.exe", 0x9218238; //1 when loading save or skipping scene
+	bool load5 : "ff7rebirth_.exe", 0x91BAFB0; //3 during loads
 	bool load2 : "ff7rebirth_.exe", 0x8F925D4;
-	bool load3 : "ff7rebirth_.exe", 0x091C5018, 0x68; //-0x10 from 1, 4 when not load, 3, 3 when load (4 byte)
+	bool load3 : "ff7rebirth_.exe", 0x8F79868, 0x218, 0x5D0; //1 for fast travel loads (16xFF at +50)
 	//bool load4 : "ff7rebirth_.exe", 0x92181C4;
-	int black : "ff7rebirth_.exe", 0x91E1F98, 0x12A8, 0x48, 8; //7 on non-load black screen, 13 on loads, 1 during gameplay
+	int black : "ff7rebirth_.exe", 0x9216638, 0x10, 0x1B8, 0x90, 8, 8; //7 on non-load black screen, 13 on loads, 1 during gameplay
 	bool menu : "ff7rebirth_.exe", 0x905E324; //1 when paused
 	bool canskip : "ff7rebirth_.exe", 0x905E320; //1 when current cutscene can be skipped
 }
 
 state("ff7rebirth_", "Steam")
 {
-	//bool load : "ff7rebirth_.exe", 0x900168C;
+	bool load5 : "ff7rebirth_.exe", 0x92428C0;
 	bool load2 : "ff7rebirth_.exe", 0x901A38C;
-	bool load3 : "ff7rebirth_.exe", 0x0924D038, 0x68;
-	int black : "ff7rebirth_.exe", 0x926A2D8, 0x12A8, 0x48, 8;
+	bool load3 : "ff7rebirth_.exe", 0x9001588, 0x218, 0x5D0;
+	int black : "ff7rebirth_.exe", 0x929E808, 0x10, 0x1B8, 0x90, 8, 8;
 	bool menu : "ff7rebirth_.exe", 0x87DEC9C;
 	bool canskip : "ff7rebirth_.exe", 0x87DEC98;
 }
@@ -54,5 +54,5 @@ isLoading
 		vars.zackload = false;
 	}
 	return (current.black > 2 && ((current.black!=7||vars.blackcounter>=60)) && !(current.menu||current.canskip))
-		|| current.load2 || current.load3;
+		|| current.load2 || current.load3 || current.load5 || current.black==13;
 }
