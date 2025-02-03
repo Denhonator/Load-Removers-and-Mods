@@ -45,7 +45,7 @@ def find_replace_meta_range(data, start, findL, findR, replace, verPos, verVal):
     return data
 
 if __name__ == "__main__":
-    random.seed(0)
+    random.seed(2)
     # DropItem
     data = read_file("Game_Original/Content/Main/Item/DataTable/DT_DropItem.uasset")
     meta = get_meta(data, 2125, 0x40)
@@ -293,27 +293,74 @@ if __name__ == "__main__":
     with open("Game/Content/Main/Item/DataTable/Cellest/DT_CellestItemWeapon.uasset", 'wb') as file:
         file.write(data)
 
+    # Abilities
+    data = read_file("Game_Original/Content/Main/Ability/Data/DT_AbilityTable.uasset")
+    meta = get_meta(data, 442, 0x40)
+
+    index = 0x4F00
+    table = {}
+    randoKeys = []
+    comp = "proper".encode()
+    while index+300 < len(data):
+        if data[index:index+6] == comp:
+            key = int.from_bytes(data[index-589:index-585],'little')
+            i = index+500
+            while not (data[i] == 0x12 and data[i+1] == 1):
+                i += 1
+            
+            table[meta[key]] = {"offsets": [index-556,index-589,i], "values": [data[index-556:index-490],data[index-589:index-585],data[i:i+62]]}
+            randoKeys.append(meta[key])
+            index = i+50
+        index += 1
+
+    random.shuffle(randoKeys)
+    index = 0
+    data = bytearray(data)
+    for key in table:
+        rkey = randoKeys[index]
+        offsets = table[key]["offsets"]
+        i = 0
+        for offset in offsets:
+            data[offset:offset+len(table[rkey]["values"][i])] = table[rkey]["values"][i][:]
+            i+=1
+        data[offsets[0]+33] = 1 #Open level
+        #data[offsets[0]+62] = 0x96 #Learn quest ID
+        #if data[offsets[0]+156]==0xE7:
+        data[offsets[0]+156] = 0xE6 #Learn condition
+        #if data[offsets[0]+189]==0x1E:
+        data[offsets[0]+189] = 5 #Learn count
+        #data[offsets[0]+301] = 0x6D # MasteryEnableFlagId
+        #if data[offsets[0]+403]==0xE7:
+        data[offsets[0]+403] = 0xE6 #Mastery condition
+        #if data[offsets[0]+436]==0x1E:
+        data[offsets[0]+436] = 5 #Mastery count
+        index += 1
+        #print("{} = {}".format(key, rkey))
+
+    with open("Game/Content/Main/Ability/Data/DT_AbilityTable.uasset", 'wb') as file:
+        file.write(data)
+
     # Scaling
     data = read_file("Game_Original/Content/Main/Exp/DataTable/DT_ExpArtsLevel.uasset")
     with open("Game/Content/Main/Exp/DataTable/DT_ExpArtsLevel.uasset", 'wb') as file:
-        file.write(scale_values(data, 0x2E7, 74, 0.1, 100))
+        file.write(scale_values(data, 0x2E7, 74, 0.2, 100))
         
     data = read_file("Game_Original/Content/Main/Exp/DataTable/DT_ExpBp.uasset")
     with open("Game/Content/Main/Exp/DataTable/DT_ExpBp.uasset", 'wb') as file:
-        file.write(scale_values(data, 0x324, 132, 0.1, 50))
+        file.write(scale_values(data, 0x324, 132, 0.2, 50))
         
     data = read_file("Game_Original/Content/Main/Exp/DataTable/DT_ExpHp.uasset")
     with open("Game/Content/Main/Exp/DataTable/DT_ExpHp.uasset", 'wb') as file:
-        file.write(scale_values(data, 0x324, 132, 0.1, 200))
+        file.write(scale_values(data, 0x324, 132, 0.2, 200))
         
     data = read_file("Game_Original/Content/Main/Exp/DataTable/DT_ExpMasterLevel.uasset")
     with open("Game/Content/Main/Exp/DataTable/DT_ExpMasterLevel.uasset", 'wb') as file:
-        file.write(scale_values(data, 0x2EF, 74, 0.1, 90))
+        file.write(scale_values(data, 0x2EF, 74, 0.2, 90))
 
     data = read_file("Game_Original/Content/Main/GamePlayData/Data/DT_EnemyForceLevelTable.uasset")
-    data = scale_values(data, 0x125C, 315, 5, 5)
+    data = scale_values(data, 0x125C, 315, 2, 5)
     with open("Game/Content/Main/GamePlayData/Data/DT_EnemyForceLevelTable.uasset", 'wb') as file:
-        file.write(scale_values(data, 0x1296, 315, 10, 5))
+        file.write(scale_values(data, 0x1296, 315, 5, 5))
 
     # Unlock locations
     data = read_file("Game_Original/Content/Main/UI/Object/Map/WorldMap/Data/DT_WorldMapIconDataTable.uasset")
