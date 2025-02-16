@@ -95,5 +95,5 @@ isLoading
 		vars.zackload = false;
 	}
 	return (current.black > 2 && ((current.black!=7||vars.blackcounter>=60)) && !(current.menu||current.canskip))
-		|| current.load3 || current.load5 || current.black==13;
+		|| current.load3 || current.load5;
 }
