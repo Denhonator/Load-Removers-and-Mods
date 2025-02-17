@@ -35,8 +35,8 @@ state("ff7remake_", "v1.0.0.4 (EGS)"){
 state("ff7remake_", "v1.0.0.4 (Steam)"){
     byte LRT:           0x57CA870;                                  //1 in the main loading screens
     byte LRT2:          0x58E47C8;                                  //1 in loading screen after cutscenes
-    byte chapter:       0x58E47D8;                                  //1 when loading a chapter (goes to 255 as byte when a chapter ends)
-    byte reset:         0x59ADBF0;                                  //1 = ingame; 0 = menu
+    byte chapter:       0x59ADBF0;                                  //1 when loading a chapter (goes to 255 as byte when a chapter ends)
+    byte reset:         0x58E47D8;                                  //1 = ingame; 0 = menu
     int BossMaxHP:      0x59AB4D8, 0x8, 0x18, 0x5E8, 0x1C;         //Returns the Enemies current Max HP
     int BossCurrentHP:  0x59AB4D8, 0x8, 0x18, 0x5E8, 0x18;         //Returns the Enemies current HP
 }
