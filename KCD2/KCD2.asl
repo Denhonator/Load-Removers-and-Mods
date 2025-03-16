@@ -1,17 +1,17 @@
-state("KingdomCome", "1.1.1")
-{
-	bool load : "WHGame.DLL", 0x53D9ED8, 0x60; //1 or 0
-	bool fade : "WHGame.DLL", 0x5281120, 0xF48, 0x108, 0x18; //1 or 0
-	bool fasttime : "WHGame.DLL", 0x52A3098; //0xFFFFFFFF or 0
-	int quest : "WHGame.DLL", 0x5281120, 0xF48, 0x108, 0x18; //Not valid for 1.1.1
-}
-
 state("KingdomCome", "1.1.2")
 {
 	bool load : "WHGame.DLL", 0x520910C; //1 or 0
 	bool fade : "WHGame.DLL", 0x52833A0, 0xF48, 0x108, 0x18; //1 or 0
 	bool fasttime : "WHGame.DLL", 0x52A5318; //0xFFFFFFFF or 0
 	int quest : "WHGame.DLL", 0x53DE7A8, 0x650, 0x30; //0 for first quest, +1 per quest
+}
+
+state("KingdomCome", "1.2.1")
+{
+	bool load : "WHGame.DLL", 0x53D4E48, 0x60; //1 or 0
+	bool fade : "WHGame.DLL", 0x527C5A0, 0x1A0, 0x18; //1 or 0
+	bool fasttime : "WHGame.DLL", 0x529E598; //0xFFFFFFFF or 0
+	int quest : "WHGame.DLL", 0x53D75A8, 0x18, 0x11F0, 0x30; //0 for first quest, +1 per quest
 }
 
 startup
@@ -24,11 +24,13 @@ init
 	vars.bootingUp = true;
 	timer.IsGameTimePaused = false;
 	
-	print(modules.First().ModuleMemorySize.ToString());
-	if(modules.First().ModuleMemorySize == 1527808)
-		version = "1.1.2";
+	vars.memsize = modules.Where(m => m.ModuleName == "WHGame.DLL").First().ModuleMemorySize;
+	print(vars.memsize.ToString());
+	
+	if(vars.memsize == 94900224)
+		version = "1.2.1";
 	else
-		version = "1.1.1";
+		version = "1.1.2";
 }
 
 exit
