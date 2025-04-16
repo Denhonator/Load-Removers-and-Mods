@@ -22,6 +22,14 @@ state("KingdomCome", "1.2.2")
 	int quest : "WHGame.DLL", 0x53D6488, 0x638, 0x30; //0 for first quest, +1 per quest
 }
 
+state("KingdomCome", "1.2.4")
+{
+	bool load : "WHGame.DLL", 0x53D4CB8, 0x60; //1 or 0
+	bool fade : "WHGame.DLL", 0x527C3A0, 0x1A0, 0x18; //1 or 0
+	bool fasttime : "WHGame.DLL", 0x529E398; //0xFFFFFFFF or 0
+	int quest : "WHGame.DLL", 0x53D7500, 0x18, 0x38, 0x11F0; //0 for first quest, +1 per quest
+}
+
 startup
 {
 	vars.hasSplit = new List<int>();
@@ -35,7 +43,9 @@ init
 	vars.memsize = modules.Where(m => m.ModuleName == "WHGame.DLL").First().ModuleMemorySize;
 	print(vars.memsize.ToString());
 	
-	if(vars.memsize == 94887936)
+	if(vars.memsize == 94892032)
+		version = "1.2.4";
+	else if(vars.memsize == 94887936)
 		version = "1.2.2";
 	else if(vars.memsize == 94900224)
 		version = "1.2.1";
