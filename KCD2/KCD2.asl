@@ -63,7 +63,7 @@ split
 {
 	if(current.quest==1 && old.quest==0)
 		vars.hasSplit.Clear();
-	else if(current.quest > old.quest && !vars.hasSplit.Contains(current.quest)){
+	if(current.quest > old.quest && !vars.hasSplit.Contains(current.quest)){
 		vars.hasSplit.Add(current.quest);
 		return true;
 	}
