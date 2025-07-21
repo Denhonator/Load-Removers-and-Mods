@@ -54,7 +54,7 @@ state("ff7rebirth_", "Steam3")
 
 state("ff7rebirth_", "EGS4")
 {
-	bool load5 : "ff7rebirth_.exe", 0x91C03F0; //3 during loads
+	bool load5 : "ff7rebirth_.exe", 0x8FCD0C8, 0x48; //0 during loads
 	bool load3 : "ff7rebirth_.exe", 0x8F7EBC8, 0x218, 0x5D0; //1 for fast travel loads (16xFF at +50)
 	int black : "ff7rebirth_.exe", 0x921BB38, 0x10, 0x1B8, 0x90, 8, 8; //7 on non-load black screen, 13 on loads, 1 during gameplay
 	bool menu : "ff7rebirth_.exe", 0x90636A4; //1 when paused
@@ -63,7 +63,7 @@ state("ff7rebirth_", "EGS4")
 
 state("ff7rebirth_", "Steam4")
 {
-	bool load5 : "ff7rebirth_.exe", 0x920D278;
+	bool load5 : "ff7rebirth_.exe", 0x901A780, 0x48;
 	bool load3 : "ff7rebirth_.exe", 0x8FCBF28, 0x218, 0x5D0;
 	int black : "ff7rebirth_.exe", 0x926FBD8, 0x10, 0x1B8, 0x90, 8, 8;
 	bool menu : "ff7rebirth_.exe", 0x87A9618;
@@ -117,5 +117,5 @@ isLoading
 		vars.zackload = false;
 	}
 	return (current.black > 2 && ((current.black!=7||vars.blackcounter>=60)) && !(current.menu||(current.canskip && !vars.zackload)))
-		|| current.load3 || current.load5;
+		|| current.load3 || !current.load5;
 }
