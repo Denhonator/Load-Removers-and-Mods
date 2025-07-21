@@ -1,0 +1,435 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CheatTable CheatEngineTableVersion="45">
+  <CheatEntries>
+    <CheatEntry>
+      <ID>136</ID>
+      <Description>"JobMaster"</Description>
+      <ShowAsHex>1</ShowAsHex>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>SOPFFO.exe+4200960</Address>
+      <CheatEntries>
+        <CheatEntry>
+          <ID>284</ID>
+          <Description>"Bahamut"</Description>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Byte</VariableType>
+          <Address>+3e</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>137</ID>
+          <Description>"Gilgamesh"</Description>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Byte</VariableType>
+          <Address>+40</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>150</ID>
+          <Description>"Lufenia"</Description>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Byte</VariableType>
+          <Address>+42</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>153</ID>
+          <Description>"BahamutMenu"</Description>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Byte</VariableType>
+          <Address>+12</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>152</ID>
+          <Description>"Exchange(Map)"</Description>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Byte</VariableType>
+          <Address>+45</Address>
+        </CheatEntry>
+      </CheatEntries>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>238</ID>
+      <Description>"MultiplayerBlocked"</Description>
+      <ShowAsHex>1</ShowAsHex>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>2 Bytes</VariableType>
+      <Address>SOPFFO.exe+4200D68</Address>
+      <CheatEntries>
+        <CheatEntry>
+          <ID>239</ID>
+          <Description>"MultiplayerBlocked"</Description>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>2 Bytes</VariableType>
+          <Address>+38</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>240</ID>
+          <Description>"MultiplayerBlocked"</Description>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>2 Bytes</VariableType>
+          <Address>+38*2</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>241</ID>
+          <Description>"MultiplayerBlocked"</Description>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>2 Bytes</VariableType>
+          <Address>+38*3</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>242</ID>
+          <Description>"MultiplayerBlocked"</Description>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>2 Bytes</VariableType>
+          <Address>+38*4</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>243</ID>
+          <Description>"MultiplayerBlocked"</Description>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>2 Bytes</VariableType>
+          <Address>+38*5</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>244</ID>
+          <Description>"MultiplayerBlocked"</Description>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>2 Bytes</VariableType>
+          <Address>+38*6</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>245</ID>
+          <Description>"MultiplayerBlocked"</Description>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>2 Bytes</VariableType>
+          <Address>+38*7</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>246</ID>
+          <Description>"MultiplayerBlocked"</Description>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>2 Bytes</VariableType>
+          <Address>+38*8</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>247</ID>
+          <Description>"MultiplayerBlocked"</Description>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>2 Bytes</VariableType>
+          <Address>+38*9</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>248</ID>
+          <Description>"MultiplayerBlocked"</Description>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>2 Bytes</VariableType>
+          <Address>+38*a</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>249</ID>
+          <Description>"MultiplayerBlocked"</Description>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>2 Bytes</VariableType>
+          <Address>+38*b</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>250</ID>
+          <Description>"MultiplayerBlocked"</Description>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>2 Bytes</VariableType>
+          <Address>+38*c</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>251</ID>
+          <Description>"MultiplayerBlocked"</Description>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>2 Bytes</VariableType>
+          <Address>+38*d</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>252</ID>
+          <Description>"MultiplayerBlocked"</Description>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>2 Bytes</VariableType>
+          <Address>+38*e</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>253</ID>
+          <Description>"MultiplayerBlocked"</Description>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>2 Bytes</VariableType>
+          <Address>+38*f</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>254</ID>
+          <Description>"MultiplayerBlocked"</Description>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>2 Bytes</VariableType>
+          <Address>+38*10</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>255</ID>
+          <Description>"MultiplayerBlocked"</Description>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>2 Bytes</VariableType>
+          <Address>+38*11</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>256</ID>
+          <Description>"MultiplayerBlocked"</Description>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>2 Bytes</VariableType>
+          <Address>+38*12</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>257</ID>
+          <Description>"MultiplayerBlocked"</Description>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>2 Bytes</VariableType>
+          <Address>+38*13</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>258</ID>
+          <Description>"MultiplayerBlocked"</Description>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>2 Bytes</VariableType>
+          <Address>+38*14</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>259</ID>
+          <Description>"MultiplayerBlocked"</Description>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>2 Bytes</VariableType>
+          <Address>+38*15</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>260</ID>
+          <Description>"MultiplayerBlocked"</Description>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>2 Bytes</VariableType>
+          <Address>+38*16</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>261</ID>
+          <Description>"MultiplayerBlocked"</Description>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>2 Bytes</VariableType>
+          <Address>+38*17</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>262</ID>
+          <Description>"MultiplayerBlocked"</Description>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>2 Bytes</VariableType>
+          <Address>+38*18</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>263</ID>
+          <Description>"MultiplayerBlocked"</Description>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>2 Bytes</VariableType>
+          <Address>+38*19</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>264</ID>
+          <Description>"MultiplayerBlocked"</Description>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>2 Bytes</VariableType>
+          <Address>+38*1a</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>265</ID>
+          <Description>"MultiplayerBlocked"</Description>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>2 Bytes</VariableType>
+          <Address>+38*1b</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>266</ID>
+          <Description>"MultiplayerBlocked"</Description>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>2 Bytes</VariableType>
+          <Address>+38*1c</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>267</ID>
+          <Description>"MultiplayerBlocked"</Description>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>2 Bytes</VariableType>
+          <Address>+38*1d</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>268</ID>
+          <Description>"MultiplayerBlocked"</Description>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>2 Bytes</VariableType>
+          <Address>+38*1e</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>269</ID>
+          <Description>"MultiplayerBlocked"</Description>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>2 Bytes</VariableType>
+          <Address>+38*1f</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>270</ID>
+          <Description>"MultiplayerBlocked"</Description>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>2 Bytes</VariableType>
+          <Address>+38*20</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>271</ID>
+          <Description>"MultiplayerBlocked"</Description>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>2 Bytes</VariableType>
+          <Address>+38*21</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>272</ID>
+          <Description>"MultiplayerBlocked"</Description>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>2 Bytes</VariableType>
+          <Address>+38*22</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>273</ID>
+          <Description>"MultiplayerBlocked"</Description>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>2 Bytes</VariableType>
+          <Address>+38*23</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>274</ID>
+          <Description>"MultiplayerBlocked"</Description>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>2 Bytes</VariableType>
+          <Address>+38*24</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>275</ID>
+          <Description>"MultiplayerBlocked"</Description>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>2 Bytes</VariableType>
+          <Address>+38*25</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>276</ID>
+          <Description>"MultiplayerBlocked"</Description>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>2 Bytes</VariableType>
+          <Address>+38*26</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>277</ID>
+          <Description>"MultiplayerBlocked"</Description>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>2 Bytes</VariableType>
+          <Address>+38*27</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>278</ID>
+          <Description>"MultiplayerBlocked"</Description>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>2 Bytes</VariableType>
+          <Address>+38*28</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>279</ID>
+          <Description>"MultiplayerBlocked"</Description>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>2 Bytes</VariableType>
+          <Address>+38*29</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>280</ID>
+          <Description>"MultiplayerBlocked"</Description>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>2 Bytes</VariableType>
+          <Address>+38*2a</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>281</ID>
+          <Description>"MultiplayerBlocked"</Description>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>2 Bytes</VariableType>
+          <Address>+38*2b</Address>
+        </CheatEntry>
+      </CheatEntries>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>282</ID>
+      <Description>"No description"</Description>
+      <ShowAsHex>1</ShowAsHex>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>4 Bytes</VariableType>
+      <Address>SOPFFO.exe+418E6E0</Address>
+      <CheatEntries>
+        <CheatEntry>
+          <ID>283</ID>
+          <Description>"MissionCount"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>2 Bytes</VariableType>
+          <Address>+80688</Address>
+        </CheatEntry>
+      </CheatEntries>
+    </CheatEntry>
+  </CheatEntries>
+  <UserdefinedSymbols/>
+  <DisassemblerComments>
+    <DisassemblerComment>
+      <Address>"SOPFFO.exe"+654D36</Address>
+      <Comment>Normally 44 3B C0
+Change to 90 3B C0
+</Comment>
+    </DisassemblerComment>
+  </DisassemblerComments>
+</CheatTable>
