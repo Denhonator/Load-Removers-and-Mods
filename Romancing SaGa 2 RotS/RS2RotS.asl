@@ -29,7 +29,7 @@ startup
 
 update
 {
-	if (current.load)
+	if (current.load || current.load2==1)
 		vars.crash = false;
 }
 
