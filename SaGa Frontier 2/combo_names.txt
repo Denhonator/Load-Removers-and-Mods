@@ -1,0 +1,329 @@
+Punch
+Retreat
+Lunge
+Feint
+Focus
+Charge
+Prepare
+Evasion:
+Backslash
+Hard Blow,Hard,Blow
+Throw
+Slash
+Cleave
+Quick Shot,Quick,Shot
+Shoot
+Thrust
+Big Spin,Big,Spin
+Whirl Beat,Whirl,Beat
+Swing
+Brawl Hit,Brawl,Hit
+Stone
+Leaf Dance,Leaf,Dance
+Pollen Gas,Pollen,Gas
+Defend
+Close In,Close,In
+Air Axe,Air,Axe
+Earth Beat,Earth,Beat
+Griffith Scratch,Griffith,Scratch
+Ghoulish Swipe,Ghoulish,Swipe
+Ancient Curse,Ancient,Curse
+Reincarnate
+Shooting Star,Shooting,Star
+Draconian Slicer,Draconian,Slicer
+All-in Assault,All-in,Assault
+Rotten Breath,Rotten,Breath
+Box Thunder,Box,Thunder
+Magmaplosion,Magma,Plosion
+Meteor Swarm,Meteor,Swarm
+Burning Rush,Burning,Rush
+Petra Delta,Petra,Delta
+Invisible Wave,Invisible,Wave
+Corpse Moss,Corpse,Moss
+Big Hammer,Big,Hammer
+Bloody Gas,Bloody,Gas
+Lightning
+Ice Bullet,Ice,Bullet
+Aqua Viper,Aqua,Viper
+Water
+Fireball,Fire,Ball
+Heat Wave,Heat,Wave
+Flame
+Xenocide
+Star Quake,Star,Quake
+Beast
+Crippling Gaze,Crippling,Gaze
+Gliding Spikes,Gliding,Spikes
+Nail Driver,Nail,Driver
+Run Through,Run,Through
+Deadly Loop,Deadly,Loop
+Scissor Break,Scissor,Break
+Missile Head,Missile,Head
+Double Thrust,Double,Thrust
+Poisonous Bite,Poisonous,Bite
+Spider Surf,Spider,Surf
+Queen's Kiss,Queen's,Kiss
+Kiss of Death,Kiss of,Death
+King's Tongue,King's,Tongue
+Death Looper,Death,Looper
+Stone Lance,Stone,Lance
+Claw Hammer,Claw,Hammer
+Horn Swing,Horn,Swing
+Pierce
+Headbutt,Head,Butt
+Check
+Break Down,Break,Down
+Tongue
+Suck Blood,Suck,Blood
+Swallow
+Bite Off,Bite,Off
+Melty Kiss,Melty,Kiss
+Fang Crush,Fang,Crush
+Screw Vine,Screw,Vine
+Eruption
+Lysate
+Poison Gas,Poison,Gas
+Ice Breath,Ice,Breath
+Petra Pray,Petra,Pray
+Hypnosis
+Step In,Step,In
+Fire Dance,Fire,Dance
+Knockout,Knock,Out
+Tackle
+Air Slider,Air,Slider
+Dance Dance,Dance,Dance
+Poison Dust,Poison,Dust
+Hypnotic Gas,Hypnotic,Gas
+Poisonous Liquid,Poisonous,Liquid
+Ultrasonic Wave,Ultrasonic,Wave
+Water Cannon,Water,Cannon
+Nature's Anger,Nature's,Anger
+Acidic Spray,Acidic,Spray
+Lightning Blast,Lightning,Blast
+Thunder Breath,Thunder,Breath
+Fire Breath,Fire,Breath
+Flame Blast,Flame,Blast
+Knight's Kiss,Knight's,Kiss
+Gaze of Death,Gaze of,Death
+Petrifying Gaze,Petrifying,Gaze
+Charming Gaze,Charming,Gaze
+Caress
+Bombard
+Rapid Hit,Rapid,Hit
+Ravage
+Heavy Blow,Heavy,Blow
+Touch
+Spore
+Shriek
+Shout
+Pollen
+Spitfire,Spit,Fire
+Seed Shot,Seed,Shot
+Press
+Sunder
+Knee Split,Knee,Split
+Rock Down,Rock,Down
+Skewer
+Earthquake,Earth,Quake
+Smile
+Scratch
+Heavy Kick,Heavy,Kick
+Somersault
+High-Rise,High,Rise
+Wing Slash,Wing,Slash
+Wing Clap,Wing,Clap
+Superior Murder,Superior,Murder
+Assimilation
+Chief's Temper,Chief's,Temper
+Steam Cyclone,Steam,Cyclone
+Body Double,Body,Double
+Soul Crunch,Soul,Crunch
+Volcano Crush,Volcano,Crush
+Alien Thunder,Alien,Thunder
+Energy Wire,Energy,Wire
+Oscillation
+Scalding Oil,Scalding,Oil
+Lightning Crash,Lightning,Crash
+Doppelgangers,Doppel,Gangers
+Reverse Cross,Reverse,Cross
+Reverse Drop,Reverse,Drop
+Pillar of Flame,Pillar of,Flame
+Permanence
+Reviver
+Fossil Cry,Fossil,Cry
+Heavy Gale,Heavy,Gale
+Hyper Rush,Hyper,Rush
+Wide Shot,Wide,Shot
+Meditation
+Nightmare,Night,Mare
+Ice Smash,Ice,Smash
+Torpedo
+Hidden Hit,Hidden,Hit
+Hardform,Hard,Form
+Blizzard
+Double Vertical,Double,Vertical
+Eradication
+Triple Dragon,Triple,Dragon
+Flash Flood,Flash,Flood
+Rolling Thunder,Rolling,Thunder
+Kitchen Sink,Kitchen,Sink
+Triangle Kick,Triangle,Kick
+Heart Breaker,Heart,Breaker
+Fists of Fury,Fists of,Fury
+Rotation Kick,Rotation,Kick
+Karate Punch,Karate,Punch
+Reactionary Shot,Reactionary,Shot
+Axe Counter,Axe,Counter
+Guard Beast,Guard,Beast
+Regeneration
+Lava Shower,Lava,Shower
+Sumo Throw,Sumo,Throw
+Corkscrew
+Kick Rush,Kick,Rush
+Arm Hammer,Arm,Hammer
+Ogre Rush,Ogre,Rush
+Brawl
+Bear Claw,Bear,Claw
+Backhand,Back,Hand
+Windmill,Wind,Mill
+Block
+Deflect
+Counter
+Bull Crush,Bull,Crush
+Dead End,Dead,End
+Eulogy
+Smash
+Cross Cut,Cross,Cut
+Rising Sun,Rising,Sun
+Tumbler
+Hyper Hammer,Hyper,Hammer
+Thunder Blade,Thunder,Blade
+Ursine Assault,Ursine,Assault
+Thousand Blades,Thousand,Blades
+Mirage Blade,Mirage,Blade
+Headwind Rush,Headwind,Rush
+Heaven and Earth,Heaven and ,Earth
+Vertical Smash,Vertical,Smash
+Dragon's Tail,Dragon's,Tail
+Slice and Dice,Slice and ,Dice
+Cross Break,Cross,Break
+Double Stroke,Double,Stroke
+Artful Slash,Artful,Slash
+Running Slash,Running,Slash
+Strike Slash,Strike,Slash
+Yo-yo,Yo,Yo
+Megahit,Mega,Hit
+Skydrive,Sky,Drive
+Axel Spin,Axel,Spin
+Time Lapse,Time,Lapse
+Cut Timber,Cut,Timber
+Tomahawk,Toma,Hawk
+No Rhythm,No,Rhythm
+Tsunami Strike,Tsunami,Strike
+Grasshopper,Grass,hopper
+Swing and Stab,Swing and ,Stab
+Time and Tide,Time and ,Tide
+Rock Splitter,Rock,Splitter
+Gong Ringer,Gong,Ringer
+Head Splitter,Head,Splitter
+Bonecrusher,Bone,Crusher
+Lobster Slayer,Lobster,Slayer
+Tornado Divide,Tornado,Divide
+Sky Rendezvous,Sky,Rendezvous
+Reverse Delta,Reverse,Delta
+Wheel Strike,Wheel,Strike
+Night Crossing,Night,Crossing
+Headsplitter,Head,Splitter
+Reaper
+Grand Slam,Grand,Slam
+Nutcracker,Nut,Cracker
+Cruncher
+Heart Beat,Heart,Beat
+Roll Beat,Roll,Beat
+Song of Earth,Song of,Earth
+Water of Life,Water of,Life
+Needle Shot,Needle,Shot
+Crystal Prism,Crystal,Prism
+Multi Shots,Multi,Shots
+Thousand Needles,Thousand,Needles
+Shade Arrows,Shade,Arrows
+Rain of Arrows,Rain of,Arrows
+Shadow Weave,Shadow,Weave
+Rapid Volley,Rapid,Volley
+Triumvirate
+Thousand Cross,Thousand,Cross
+Beast Lightning,Beast,Lightning
+Heavenly Strike,Heavenly,Strike
+Arm of Light,Arm of,Light
+Split Cranium,Split,Cranium
+Sleep
+Woodstock,Wood,Stock
+Bushfire,Bush,Fire
+Quick Nock,Quick,Nock
+Sidewinder,Side,Winder
+Id Break,Id,Break
+Aimed Shot,Aimed,Shot
+Puncture
+Spoil Wave,Spoil,Wave
+Firestorm,Fire,Storm
+Flame Naga,Flame,Naga
+Howling Heaven,Howling,Heaven
+Stone Memory,Stone,Memory
+Sonic Sanctuary,Sonic,Sanctuary
+Sonic Burner,Sonic,Burner
+Deadly Snake,Deadly,Snake
+Heaven's Thunder,Heaven's,Thunder
+Sonic Poison,Sonic,Poison
+Song of Souls,Song of,Souls
+Incineration
+Recovery Breath,Recovery,Breath
+Stone Armor,Stone,Armor
+Water Hammer,Water,Hammer
+Needle Burst,Needle,Burst
+Slime Net,Slime,Net
+Megabolt,Mega,Bolt
+Comet Fall,Comet,Fall
+Regenerate
+Berserk
+Mindscape,Mind,Scape
+Hymnal
+Windbreaker,Wind,Breaker
+Poison Arrow,Poison,Arrow
+Bird Hunter,Bird,Hunter
+Jewel Strike,Jewel,Strike
+Dual Dragons,Dual,Dragons
+Snake Blaster,Snake,Blaster
+Gale Strike,Gale,Strike
+Tornado Slash,Tornado,Slash
+Divine Forest,Divine,Forest
+Bloodberry Dance,Bloodberry,Dance
+Raspberry Dance,Raspberry,Dance
+Mystic Dance,Mystic,Dance
+Berry Dance,Berry,Dance
+Shrub Storm,Shrub,Storm
+Astral Stair,Astral,Stair
+Fire Wheel,Fire,Wheel
+Gale Slash,Gale,Slash
+Stone Shot,Stone,Shot
+Flare Blow,Flare,Blow
+Stone Fist,Stone,Fist
+Fire Bird,Fire,Bird
+Izuna
+Spark Shot,Spark,Shot
+Deathshot,Death,Shot
+Blazing Dragon,Blazing,Dragon
+Stone Pierce,Stone,Pierce
+Verdant Tusk,Verdant,Tusk
+Acoustic Assault,Acoustic,Assault
+Stone Strike,Stone,Strike
+Arboreal Bash,Arboreal,Bash
+Sonic Splitter,Sonic,Splitter
+Kindled Cleave,Kindled,Cleave
+Stone Sever,Stone,Sever
+Arboreal Sever,Arboreal,Sever
+Acoustic Blade,Acoustic,Blade
+Flame Sword,Flame,Sword
+Stone Sword,Stone,Sword
+Arboreal Slash,Arboreal,Slash
+Acoustic Palm,Acoustic,Palm
+Flame Punch,Flame,Punch
