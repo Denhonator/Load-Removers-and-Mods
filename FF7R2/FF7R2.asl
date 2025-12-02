@@ -70,6 +70,24 @@ state("ff7rebirth_", "Steam4")
 	bool canskip : "ff7rebirth_.exe", 0x87A961C;
 }
 
+state("ff7rebirth_", "EGS5")
+{
+	bool load5 : "ff7rebirth_.exe", 0x90D1678, 0x48; //0 during loads
+	bool load3 : "ff7rebirth_.exe", 0x90D1178, 0x218, 0x5D0; //1 for fast travel loads (16xFF at +50)
+	int black : "ff7rebirth_.exe", 0x936C628, 0x10, 0x1B8, 0x90, 8, 8; //7 on non-load black screen, 13 on loads, 1 during gameplay
+	bool menu : "ff7rebirth_.exe", 0x88AE9CC; //1 when paused
+	bool canskip : "ff7rebirth_.exe", 0x88AE9C8; //1 when current cutscene can be skipped
+}
+
+state("ff7rebirth_", "Steam5")
+{
+	bool load5 : "ff7rebirth_.exe", 0x914D550, 0x48;
+	bool load3 : "ff7rebirth_.exe", 0x90FEDE8, 0x218, 0x5D0;
+	int black : "ff7rebirth_.exe", 0x939A0E8, 0x10, 0x1B8, 0x90, 8, 8;
+	bool menu : "ff7rebirth_.exe", 0x88DDB8C;
+	bool canskip : "ff7rebirth_.exe", 0x88DDB88;
+}
+
 startup
 {
 	vars.zackload = false;
@@ -82,7 +100,11 @@ init
 	timer.IsGameTimePaused = false;
 	
 	print(modules.First().ModuleMemorySize.ToString());
-	if (modules.First().ModuleMemorySize == 161660928)
+	if (modules.First().ModuleMemorySize == 163041280)
+		version = "EGS5";
+	else if (modules.First().ModuleMemorySize == 163237888)
+		version = "Steam5";
+	else if (modules.First().ModuleMemorySize == 161660928)
 		version = "EGS4";
 	else if (modules.First().ModuleMemorySize == 162004992)
 		version = "Steam4";
