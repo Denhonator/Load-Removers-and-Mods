@@ -1,26 +1,38 @@
-//Credits Mysterion_06_
+//Credits Mysterion352
 //Commissioned by Scruffington
 //Thanks to everyone who tested it
 //Thanks to DesertEagle417 for creating the Yuffie section
 //Thanks to Qwazerty for updating the asl - Added Steam version support
-//Updated for 1.0.0.4 by denho
+//Updated 20.06.2023 - Thanks to NanakiEmi for finding the new LRT, LRT2, chapter and reset pointer for Epic Version
+//Updated 15.08.2024 - Added newest Steam Support - Mysterion352
+//Updated 20.2.2025 - Updated for 1.0.0.4 for Steam and EGS - Denhonator
+//Updated 25.1.2026 - Updated for 1.0.0.6 for Steam and EGS - Denhonator
+
+state("ff7remake_", "v1.0.0.1 (Steam)"){
+    byte LRT:           0x57B94F0;                                  //1 in the main loading screens
+    byte LRT2:          0x58D33F0;                                  //1 in loading screen after cutscenes
+    byte chapter:       0x599C6B0;                                  //1 when loading a chapter (goes to 255 as byte when a chapter ends)
+    byte reset:         0x599C6CD;                                  //1 = ingame; 0 = menu
+    int BossMaxHP:      0x5999F98, 0x8, 0x18, 0x5E8, 0x1C;          //Returns the Enemies current Max HP
+    int BossCurrentHP:  0x5999F98, 0x8, 0x18, 0x5E8, 0x18;          //Returns the Enemies current HP
+}
 
 state("ff7remake_", "v1.0.0.0 (Steam)"){
     byte LRT:           0x57A5A70;                                  //1 in the main loading screens
     byte LRT2:          0x58BF970;                                  //1 in loading screen after cutscenes
     byte chapter:       0x5988C20;                                  //1 when loading a chapter (goes to 255 as byte when a chapter ends)
     byte reset:         0x5374210;                                  //1 = ingame; 0 = menu
-    int BossMaxHP:      0x05986508, 0x8, 0x18, 0x5E8, 0x1C;         //Returns the Enemies current Max HP
-    int BossCurrentHP:  0x05986508, 0x8, 0x18, 0x5E8, 0x18;         //Returns the Enemies current HP
+    int BossMaxHP:      0x5986508, 0x8, 0x18, 0x5E8, 0x1C;          //Returns the Enemies current Max HP
+    int BossCurrentHP:  0x5986508, 0x8, 0x18, 0x5E8, 0x18;          //Returns the Enemies current HP
 }
 
-state("ff7remake_", "v1.0.0.2 (EGS)"){
+state("ff7remake_", "v1.0.0.0 (EGS)"){
     byte LRT:           0x57B1470;                                  //1 in the main loading screens
     byte LRT2:          0x58CB370;                                  //1 in loading screen after cutscenes
     byte chapter:       0x5994530;                                  //1 when loading a chapter (goes to 255 as byte when a chapter ends)
     byte reset:         0x58CB380;                                  //1 = ingame; 0 = menu
-    int BossMaxHP:      0x0597E2D8, 0x8, 0x18, 0x5E8, 0x1C;         //Returns the Enemies current Max HP
-    int BossCurrentHP:  0x0597E2D8, 0x8, 0x18, 0x5E8, 0x18;         //Returns the Enemies current HP
+    int BossMaxHP:      0x5991E18, 0x8, 0x18, 0x5E8, 0x1C;          //Returns the Enemies current Max HP
+    int BossCurrentHP:  0x5991E18, 0x8, 0x18, 0x5E8, 0x18;          //Returns the Enemies current HP
 }
 
 state("ff7remake_", "v1.0.0.4 (EGS)"){
@@ -59,9 +71,10 @@ state("ff7remake_", "v1.0.0.6 (Steam)"){
     int BossCurrentHP:  0x59CA0D8, 0x8, 0x18, 0x5E8, 0x18;         //Returns the Enemies current HP
 }
 
+
 startup{
     //Asks the user to set his timer to game time on livesplit, which is needed for verification
-    if (timer.CurrentTimingMethod == TimingMethod.RealTime) // Inspired by the Modern warfare 3 Autosplitter
+    if (timer.CurrentTimingMethod == TimingMethod.RealTime)
     {
         var timingMessage = MessageBox.Show (
             "This game uses Time without Loads (Game Time) as the main timing method.\n"+
@@ -74,7 +87,6 @@ startup{
             timer.CurrentTimingMethod = TimingMethod.GameTime;
         }
     }
-
     //Variable initialization
     vars.HPsCur = new int[10];
     vars.HPsMax = new int[10];
@@ -96,21 +108,20 @@ startup{
 }
 
 init{
-	print((modules.First().ModuleMemorySize).ToString());
     switch (modules.First().ModuleMemorySize) {
         default:
-        version = "v1.0.0.2 (EGS)";
+        version = "v1.0.0.0 (EGS)";
         vars.offset = 0x0;
         break;
-		case (99561472):
-        version = "v1.0.0.6 (EGS)";
-        vars.offset = 0x1DBE0;
+        case (99311616):
+        version = "v1.0.0.0 (Steam)";
+        vars.offset = 0xB910;
         break;
-		case (99594240):
-        version = "v1.0.0.6 (Steam)";
-        vars.offset = 0x25D20;
+        case (99393536):
+        version = "v1.0.0.1 (Steam)";
+        vars.offset = 0x8180;
         break;
-		case (99438592):
+        case (99438592):
         version = "v1.0.0.4 (EGS)";
         vars.offset = 0;
         break;
@@ -118,12 +129,17 @@ init{
         version = "v1.0.0.4 (Steam)";
         vars.offset = 0x7120;
         break;
-        case (99311616):
-        version = "v1.0.0.0 (Steam)";
-        vars.offset = 0x8230;
+		case (99561472):
+        version = "v1.0.0.6 (EGS)";
+        vars.offset = 0x30180;
+        break;
+		case (99594240):
+        version = "v1.0.0.6 (Steam)";
+        vars.offset = 0x382C0;
         break;
     }
 
+    //print("This is module size: " + modules.First().ModuleMemorySize.ToString());
     //Variable initilization
     vars.CompletedSplits = new List<int>();
 
@@ -158,8 +174,8 @@ update{
     }
 
     for(int i = 0; i < 10; ++i){
-        vars.HPsCur[i] = new DeepPointer(0x59A43B8 + vars.offset, 0x8, 0x18 + (i * 0x150), 0x5E8, 0x18).Deref<int>(game);
-        vars.HPsMax[i] = new DeepPointer(0x59A43B8 + vars.offset, 0x8, 0x18 + (i * 0x150), 0x5E8, 0x1C).Deref<int>(game);
+        vars.HPsCur[i] = new DeepPointer(0x5991E18 + vars.offset, 0x8, 0x18 + (i * 0x150), 0x5E8, 0x18).Deref<int>(game);
+        vars.HPsMax[i] = new DeepPointer(0x5991E18 + vars.offset, 0x8, 0x18 + (i * 0x150), 0x5E8, 0x1C).Deref<int>(game);
     }
 }
 
