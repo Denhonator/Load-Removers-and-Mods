@@ -7,6 +7,7 @@
 //Updated 15.08.2024 - Added newest Steam Support - Mysterion352
 //Updated 20.2.2025 - Updated for 1.0.0.4 for Steam and EGS - Denhonator
 //Updated 25.1.2026 - Updated for 1.0.0.6 for Steam and EGS - Denhonator
+//Updated 20.2.2026 - Updated for 1.0.0.7 for Steam and EGS - Denhonator
 
 state("ff7remake_", "v1.0.0.1 (Steam)"){
     byte LRT:           0x57B94F0;                                  //1 in the main loading screens
