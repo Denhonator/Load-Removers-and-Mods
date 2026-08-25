@@ -101,7 +101,7 @@ state("ff7rebirth_", "Steam6")
 {
 	bool load5 : "ff7rebirth_.exe", 0x91D8558, 0x48;
 	bool load3 : "ff7rebirth_.exe", 0x8F325B8, 0x218, 0x5D0;
-	int black : "ff7rebirth_.exe", 0x91D69F8, 0x10, 0x1B8, 0x90, 8, 8;
+	int black : "ff7rebirth_.exe", 0x9186180, 0x10, 0xE8, 0x98, 8;
 	bool menu : "ff7rebirth_.exe", 0x871140C;
 	bool canskip : "ff7rebirth_.exe", 0x8711408;
 }
